@@ -1,0 +1,42 @@
+Manual assignment: 
+SUT: https://www.saucedemo.com/	
+Requirement: As the QA lead. I want to manual test package should be cover the requirement as below:
+End to End work flows: 
+Data: standard_user,problem_user, performance_glitch_user
+Acceptain Criteria:
+	    User login should login succesfully with each user has provided above and inventory page should be displayed after login
+		Workflow: add a product then check out cart.
+			- Verify the Payment Information, Shipping Information should be displayed no any broken.
+			- Verify the Item total, Tax, Total should not string type.
+			- Verify Cancel, Finish button should be enabled and displayed without any broken.
+			- Verify DESCRIPTION of product should matched as the description on inventory page  
+	 Negative case login (using locked_out_user)
+	 BONUS 1: Display or not image. (using problem_user) - BONUS if implement with both manual and automation
+
+Automation assignment:
+1. Client need to transfer from manual test cases to automation test scripts for all manual testcase.
+
+2. Client need to run on Chrome và Firefox browsers.
+
+3. Client need to generate the report with html after automation test done - BONUS POINT HERE!!!!!
+
+4. Create the test automation using Rest Sharp in C# to verify each validation below:
+Method		Type	Full route												Validation point	
+GET			JSON	http://dummy.restapiexample.com/api/v1/employees		Verify in the response data: should have total record is 24 and response.status is success and response status is 200
+GET			JSON	http://dummy.restapiexample.com/api/v1/employee/1		Verify the response data: should have status is success, response status is 200, response.message should be "Successfully! Record has been fetched." and id = "id": 1
+POST		JSON	http://dummy.restapiexample.com/api/v1/create			Create new record in database using data below:
+{
+    "name":"FA-YourFPTAccount",
+    "salary":"N/A",
+    "age":"18"
+}
+Note: e.g "name":"FA-NamND33", -> xài account các bạn nha.
+Verify the response data should have response.message should be "Successfully! Record has been added." and "status": "success".
+BONUS: Extent report fixture, Parallel Threads local fixture
+Hint 1: 
+ - DriverFactory.
+ - Implement test scripts base on the all manual test cases as mentioned on manual assignment
+ - Using extent report.
+ - Using Rest Sharp lib for API automation test - include Extend report fixture.
+ - POM, Data-driven (JSON or Excel). - BONUS: Both will be reeceived bonus.
+ 
